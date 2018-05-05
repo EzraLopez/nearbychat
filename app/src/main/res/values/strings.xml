@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE resources [ <!ENTITY appName "Nearby Chat"> ]>
+
+<resources>
+    <string name="app_name">&appName;</string>
+
+    <!-- Login Activity -->
+    <string name="login_instructions">Welcome!\nEnter a username below or go anonymous</string>
+    <string name="username_hint">Username</string>
+    <string name="login_button">Log In</string>
+
+    <!-- Main Activity -->
+    <string name="message_hint">Type a message…</string>
+    <string name="send_button">Send</string>
+    <string name="action_logout">Log Out</string>
+    <string name="action_clear_chat_history">Clear Chat History</string>
+
+    <!-- Chat Bubbles Placeholders -->
+    <string name="message_sent_placeholder">hello, world!</string>
+    <string name="message_sent_creation_time_placeholder">11:40 AM</string>
+    <string name="message_received_placeholder">Sure, I\'m the world! Turn off lights you don\'t use and help save me.</string>
+    <string name="message_received_creation_time_placeholder">11:42 AM</string>
+    <string name="message_received_author_placeholder">The World</string>
+
+    <!-- About Activity -->
+    <string name="app_logo">app logo</string>
+    <string name="about_button">About</string>
+    <string name="feedback_button">Feedback</string>
+    <string name="app_version_placeholder">v0.1.0</string>
+    <string name="version">Version</string>
+    <string name="about_activity_label">About</string>
+    <string name="developer_name">Esdras Lopez</string>
+    <string name="developer_title">Developer</string>
+    <string name="dev_website_button">Website</string>
+    <string name="dev_github_button">GitHub</string>
+    <string name="dev_twitter_button">Twitter</string>
+    <string name="designer_linkedin_button">LinkedIn</string>
+    <string name="designer_name">Kristin Lopez</string>
+    <string name="designer_title">Designer</string>
+    <string name="dev_linkedin_button">LinkedIn</string>
+    <string name="licenses_button">Licenses</string>
+    <string name="licenses_activity_label">Open Source Licenses</string>
+    <string name="source_code_button">Source Code</string>
+
+    <!-- Feedback Dialog -->
+    <string name="play_store_review_button">Write a Play Store Review</string>
+    <string name="github_issue_button">Create a GitHub Issue</string>
+    <string name="contact_developer_button">Contact Developer</string>
+
+    <!-- Empty View -->
+    <string name="empty_view_message"><b>Out in space</b>\nSend a signal?</string>
+    <string name="empty_view_image">Empty View Image</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_copy">Copy</string>
+    <string name="send_to">Share</string>
+    <string name="message_copied_notification">Message copied</string>
+</resources>

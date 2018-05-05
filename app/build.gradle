@@ -1,0 +1,75 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.esdraslopez.android.nearbychat"
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 3
+        versionName "0.1.2"
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            resValue 'string', "nearby_messages_api_key", NearbyChat_NearbyMessagesAPIKeyRelease
+        }
+        debug {
+            resValue 'string', "nearby_messages_api_key", NearbyChat_NearbyMessagesAPIKeyDebug
+        }
+    }
+}
+
+android.applicationVariants.all { variant ->
+    def appName
+
+    if (project.hasProperty("applicationName")) {
+        appName = applicationName
+    } else {
+        appName = parent.name
+    }
+
+    variant.outputs.all {
+        outputFileName = "${appName}-${variant.name}-${variant.versionName}-${variant.versionCode}.apk"
+    }
+
+    // Copy mapping file to project root directory
+    if (variant.getBuildType().isMinifyEnabled()) {
+        variant.assemble.doLast {
+            copy {
+                from "${mappingFile}"
+                into "${rootDir}"
+                rename { String fileName ->
+                    "mapping-${appName}-${variant.name}-${variant.versionName}-${variant.versionCode}.txt"
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.support:appcompat-v7:$support_lib_version"
+    implementation "com.android.support:support-media-compat:$support_lib_version"
+    implementation "com.android.support:support-v4:$support_lib_version"
+    implementation "com.android.support:design:$support_lib_version"
+    implementation "com.android.support:recyclerview-v7:${support_lib_version}"
+    implementation "com.android.support:support-annotations:${support_lib_version}"
+    implementation "com.android.support:cardview-v7:${support_lib_version}"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    implementation 'com.google.android.gms:play-services-nearby:15.0.0'
+    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation "com.mikepenz:aboutlibraries:6.0.8"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.core:core-ktx:0.3'
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+}
+repositories {
+    mavenCentral()
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#27aae1</color>
+    <color name="colorPrimaryDark">#007baf</color>
+    <color name="colorPrimaryLight">#C5CAE9</color>
+    <color name="colorAccent">#27aae1</color>
+
+    <color name="textColorPrimary">#212121</color>
+    <color name="textColorSecondary">#757575</color>
+
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#BDBDBD</color>
+
+    <color name="black">#000</color>
+    <color name="white">#fff</color>
+    <color name="lightGray">#e0e0e0</color>
+    <color name="darkGray">#aeaeae</color>
+
+    <color name="cabActions">@color/black</color>
+</resources>
