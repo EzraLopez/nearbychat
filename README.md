@@ -14,7 +14,7 @@ Nearby uses a combination of Bluetooth, Bluetooth Low Energy, Wi-Fi and near-ult
 
 Push notifications are not currently supported due to API limitations. You must have the app in the foreground to guarantee you will receive messages from devices around you. 
 
-The app is not meant to be used for extended periods of time. Nearby's use of radios and sensors will consume battery at a higher rate than usual. (Battery consumption will decrease with earshot mode - not yet implemented, but you could help, remember, it is fully open source :) )
+The app is not meant to be used for extended periods of time. Nearby's use of radios and sensors will consume battery at a higher rate than usual. (Battery consumption will decrease with earshot mode - not yet implemented, but you could help, remember, it is fully open source 😀 )
 
 ## Run Locally
 * Get an API Key. You may reuse an existing Android Key, but to create a new one follow the steps bellow: 
