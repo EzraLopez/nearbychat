@@ -46,6 +46,9 @@
     <string name="play_store_review_button">Write a Play Store Review</string>
     <string name="github_issue_button">Create a GitHub Issue</string>
     <string name="contact_developer_button">Contact Developer</string>
+    <string name="email_app_not_found_error">Could not find an email app</string>
+    <string name="feedback_email_placeholder">Remove this text to prove you are not a robot.</string>
+    <string name="feedback_email_subject_ending">Feedback</string>
 
     <!-- Empty View -->
     <string name="empty_view_message"><b>Out in space</b>\nSend a signal?</string>

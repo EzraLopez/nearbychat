@@ -34,7 +34,7 @@ class LoginActivity : AppCompatActivity() {
 
         login_button.setOnClickListener { login() }
         about_button.setOnClickListener { Util.startActivity(this, AboutActivity::class.java) }
-        feedback_button.setOnClickListener { FeedbackBottomDialogFragment.newInstance().show(supportFragmentManager, "add_photo_dialog_fragment") }
+        feedback_button.setOnClickListener { FeedbackBottomDialogFragment.newInstance().show(supportFragmentManager, "feedback_fragment") }
     }
 
     fun login() {
