@@ -1,67 +1,95 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/play_store_review_button"
+    <!--
+    Had to drop support for compound drawables due to an existing AppCompat bug that crashed the app
+    More info: https://issuetracker.google.com/issues/37090849
+    -->
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:background="?attr/selectableItemBackground"
-        android:clickable="true"
-        android:drawablePadding="32dp"
-        android:drawableStart="@drawable/ic_star"
-        android:focusable="true"
-        android:gravity="start|center_vertical"
-        android:paddingBottom="8dp"
-        android:paddingEnd="16dp"
-        android:paddingStart="16dp"
-        android:paddingTop="8dp"
-        android:text="@string/play_store_review_button"
-        android:textSize="16sp" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            app:srcCompat="@drawable/ic_star"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/play_store_review_button"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="start|center_vertical"
+            android:text="@string/play_store_review_button"
+            android:textSize="16sp" />
+
+    </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/lightGray" />
 
-    <TextView
-        android:id="@+id/github_issue_button"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:background="?attr/selectableItemBackground"
-        android:clickable="true"
-        android:drawablePadding="32dp"
-        android:drawableStart="@drawable/ic_github"
-        android:focusable="true"
-        android:gravity="start|center_vertical"
-        android:paddingBottom="8dp"
-        android:paddingEnd="16dp"
-        android:paddingStart="16dp"
-        android:paddingTop="8dp"
-        android:text="@string/github_issue_button"
-        android:textSize="16sp" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            app:srcCompat="@drawable/ic_github"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/github_issue_button"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="start|center_vertical"
+            android:text="@string/github_issue_button"
+            android:textSize="16sp" />
+
+    </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/lightGray" />
 
-    <TextView
-        android:id="@+id/contact_developer_button"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:background="?attr/selectableItemBackground"
-        android:clickable="true"
-        android:drawablePadding="32dp"
-        android:drawableStart="@drawable/ic_email"
-        android:focusable="true"
-        android:gravity="start|center_vertical"
-        android:paddingBottom="8dp"
-        android:paddingEnd="16dp"
-        android:paddingStart="16dp"
-        android:paddingTop="8dp"
-        android:text="@string/contact_developer_button"
-        android:textSize="16sp" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            app:srcCompat="@drawable/ic_email"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/contact_developer_button"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="start|center_vertical"
+            android:text="@string/contact_developer_button"
+            android:textSize="16sp" />
+
+    </LinearLayout>
 
 </LinearLayout>
