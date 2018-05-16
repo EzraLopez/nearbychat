@@ -15,7 +15,11 @@ import java.util.*
 
 class LoginActivity : AppCompatActivity() {
 
-    val TAG: String = LoginActivity::class.java.simpleName
+    companion object {
+        private const val TAG: String = "LoginActivity"
+        const val KEY_USERNAME = "username"
+        const val KEY_USER_UUID = "user-uuid"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,10 +71,5 @@ class LoginActivity : AppCompatActivity() {
         super.onResume()
 
         login_button.isEnabled = true;
-    }
-
-    companion object {
-        const val KEY_USERNAME = "username"
-        const val KEY_USER_UUID = "user-uuid"
     }
 }
