@@ -27,7 +27,7 @@ class LoginActivity : AppCompatActivity() {
 
         Util.clearSharedPreferences(this)
 
-        username_input.setOnEditorActionListener { v, actionId, event ->
+        username_input.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 login()
                 true
@@ -70,6 +70,6 @@ class LoginActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        login_button.isEnabled = true;
+        login_button.isEnabled = true
     }
 }

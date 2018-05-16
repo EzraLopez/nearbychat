@@ -90,10 +90,10 @@ class MainActivity : AppCompatActivity() {
             override fun afterTextChanged(s: Editable?) {
                 if (!message_input.text.toString().trim().isEmpty()) {
                     send_message_button.setImageResource(R.drawable.ic_send)
-                    send_message_button.isEnabled = true;
+                    send_message_button.isEnabled = true
                 } else {
                     send_message_button.setImageResource(R.drawable.ic_send_disabled)
-                    send_message_button.isEnabled = false;
+                    send_message_button.isEnabled = false
                 }
             }
 
@@ -101,7 +101,7 @@ class MainActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
 
-        send_message_button.isEnabled = false;
+        send_message_button.isEnabled = false
         send_message_button.setOnClickListener {
             val timestamp = System.currentTimeMillis()
 
