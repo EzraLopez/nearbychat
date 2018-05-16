@@ -5,6 +5,8 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
@@ -84,20 +86,33 @@ class MainActivity : AppCompatActivity() {
                 .setMessage("Your chat history will be deleted.")
                 .setNegativeButton("No", null)
 
-        send_message_button.setOnClickListener {
-            val message = message_input.text.toString().trim { it <= ' ' }
-            if (!message.isEmpty()) {
-                val timestamp = System.currentTimeMillis()
-
-                val deviceMessage = DeviceMessage(userUUID, username, message, timestamp)
-
-                activeMessage = deviceMessage.message
-                Log.d(TAG, "Publishing message = ${activeMessage.content}")
-                Nearby.getMessagesClient(this).publish(activeMessage)
-
-                messageListAdapter.add(deviceMessage)
-                message_input.setText("")
+        message_input.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                if (!message_input.text.toString().trim().isEmpty()) {
+                    send_message_button.setImageResource(R.drawable.ic_send)
+                    send_message_button.isEnabled = true;
+                } else {
+                    send_message_button.setImageResource(R.drawable.ic_send_disabled)
+                    send_message_button.isEnabled = false;
+                }
             }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+        })
+
+        send_message_button.isEnabled = false;
+        send_message_button.setOnClickListener {
+            val timestamp = System.currentTimeMillis()
+
+            val deviceMessage = DeviceMessage(userUUID, username, message_input.text.toString(), timestamp)
+
+            activeMessage = deviceMessage.message
+            Log.d(TAG, "Publishing message = ${activeMessage.content}")
+            Nearby.getMessagesClient(this).publish(activeMessage)
+
+            messageListAdapter.add(deviceMessage)
+            message_input.setText("")
         }
     }
 
