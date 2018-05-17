@@ -10,7 +10,7 @@
     android:paddingStart="8dp">
 
     <TextView
-        android:id="@+id/text_message_name"
+        android:id="@+id/received_message_author"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
@@ -18,12 +18,12 @@
         android:layout_marginTop="4dp"
         android:text="@string/message_received_author_placeholder"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/text_message_body"
+        app:layout_constraintBottom_toTopOf="@+id/received_message_body"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/text_message_body"
+        android:id="@+id/received_message_body"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:autoLink="all"
@@ -41,10 +41,10 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_message_name" />
+        app:layout_constraintTop_toBottomOf="@+id/received_message_author" />
 
     <TextView
-        android:id="@+id/text_message_time"
+        android:id="@+id/received_message_creation_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -54,7 +54,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/text_message_body"
+        app:layout_constraintStart_toEndOf="@+id/received_message_body"
         tools:ignore="SmallSp" />
 
     <android.support.constraint.Guideline
