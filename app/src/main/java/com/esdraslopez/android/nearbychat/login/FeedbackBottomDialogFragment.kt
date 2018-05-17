@@ -33,7 +33,7 @@ class FeedbackBottomDialogFragment : BottomSheetDialogFragment() {
             }
         }
 
-        view.github_issue_button.setOnClickListener { Util.goToURL(activity, "https://github.com/EzraLopez/nearbychat/issues/new") }
+        view.github_issue_button.setOnClickListener { Util.goToURL(context!!, "https://github.com/EzraLopez/nearbychat/issues/new") }
 
         view.contact_developer_button.setOnClickListener {
             val email = "androidapps@esdraslopez.com"
