@@ -41,12 +41,12 @@ class LoginActivity : AppCompatActivity() {
         feedback_button.setOnClickListener { FeedbackBottomDialogFragment.newInstance().show(supportFragmentManager, "feedback_fragment") }
     }
 
-    fun login() {
-        login_button.clearFocus()
-        login_button.isEnabled = false
+    private fun login() {
+        login_container_view.requestFocus()
         Util.hideKeyboard(this)
 
         if (Util.isConnected(this@LoginActivity)) {
+            login_button.isEnabled = false
 
             var username = username_input.text.toString()
             if (username.isEmpty()) username = "Anonymous"
